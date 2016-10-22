@@ -1,0 +1,3 @@
+version=3
+ftp://shogun-toolbox.org/shogun/releases/([\d\.]+)/sources/shogun-([\d\.]+)\.tar\.bz2 \
+ debian debian/orig-tar.sh

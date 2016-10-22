@@ -1,0 +1,10 @@
+This package was initially debianized by Torsten Werner <twerner@debian.org>
+and is now maintained by Soeren Sonnenburg <sonne@debian.org>.
+
+The nonfree SVMlight files have been removed from the upstream archive. Users
+seeking for SVMLight may resort to using the included GPDT-SVM as a drop in
+replacement. It uses a very similar algorithm but in many practical
+applications was shown to be a lot faster.
+
+User documentation is availabe if the shogun-doc package is installed. Just
+point your browser to /usr/share/doc/shogun-doc-en/html-en/index.html .

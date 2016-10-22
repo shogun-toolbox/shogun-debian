@@ -1,0 +1,36 @@
+#!/usr/bin/make -f
+
+BUILDDIR = $(CURDIR)/debian/build
+
+ARCH=$(shell dpkg-architecture -qDEB_BUILD_ARCH)
+OVERRIDE_COMPILER=
+DISABLE_SSE=
+
+ifeq ($(ARCH),$(filter $(ARCH),mips mipsel))
+	OVERRIDE_COMPILER=-DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/clang++
+endif
+
+ifeq ($(ARCH),$(filter $(ARCH),i386 hurd-i386 kfreebsd-i386))
+	DISABLE_SSE="-DDISABLE_SSE=ON"
+endif
+
+%:
+	dh $@ --buildsystem=cmake --builddirectory=$(BUILDDIR)
+
+override_dh_auto_configure:
+	dh_auto_configure -- -DCMAKE_SKIP_RPATH=TRUE -DBUILD_EXAMPLES=OFF -DUSE_SVMLIGHT=OFF -DCmdLineStatic=ON $(OVERRIDE_COMPILER) $(DISABLE_SSE)
+
+override_dh_install:
+	$(MAKE) -C doc doc
+	$(RM) doc/html*/*.map
+	$(RM) doc/html*/*.md5
+	$(RM) doc/html*/installdox
+	$(RM) doc/html*/formula.repository
+	mkdir -p $(CURDIR)/debian/shogun-doc-en/usr/share/doc/shogun-doc-en
+	mkdir -p $(CURDIR)/debian/shogun-doc-cn/usr/share/doc/shogun-doc-cn
+	cp -r doc/html $(CURDIR)/debian/shogun-doc-en/usr/share/doc/shogun-doc-en
+	cp -r doc/html_cn $(CURDIR)/debian/shogun-doc-cn/usr/share/doc/shogun-doc-cn
+	dh_install
+
+override_dh_strip:
+	dh_strip --dbg-package=libshogun-dbg
