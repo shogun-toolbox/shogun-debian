@@ -21,15 +21,9 @@ override_dh_auto_configure:
 	dh_auto_configure -- -DCMAKE_SKIP_RPATH=TRUE -DBUILD_EXAMPLES=OFF -DUSE_SVMLIGHT=OFF -DCmdLineStatic=ON -DBUILD_META_EXAMPLES=OFF $(OVERRIDE_COMPILER) $(DISABLE_SSE)
 
 override_dh_install:
-	$(MAKE) -C doc doc
-	$(RM) doc/html*/*.map
-	$(RM) doc/html*/*.md5
-	$(RM) doc/html*/installdox
-	$(RM) doc/html*/formula.repository
+	$(MAKE) -C $(BUILDDIR) doxygen
 	mkdir -p $(CURDIR)/debian/shogun-doc-en/usr/share/doc/shogun-doc-en
-	mkdir -p $(CURDIR)/debian/shogun-doc-cn/usr/share/doc/shogun-doc-cn
-	cp -r doc/html $(CURDIR)/debian/shogun-doc-en/usr/share/doc/shogun-doc-en
-	cp -r doc/html_cn $(CURDIR)/debian/shogun-doc-cn/usr/share/doc/shogun-doc-cn
+	cp -r $(BUILDDIR)/doc/doxygen/html $(CURDIR)/debian/shogun-doc-en/usr/share/doc/shogun-doc-en
 	dh_install
 
 override_dh_strip:
