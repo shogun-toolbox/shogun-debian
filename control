@@ -16,7 +16,7 @@ Homepage: http://www.shogun-toolbox.org
 Vcs-Svn: http://bollin.googlecode.com/svn/shogun/trunk/
 Vcs-Browser: http://bollin.googlecode.com/svn/shogun/trunk/
 
-Package: libshogun16
+Package: libshogun17
 Conflicts: libshogunui6, libshogunui5, libshogunui4, libshogunui3,
  libshogunui2, libshogunui1, libshogunui0
 Architecture: any
@@ -47,7 +47,7 @@ Description: Large Scale Machine Learning Toolbox
 Package: libshogun-dev
 Section: libdevel
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libshogun16 (= ${binary:Version})
+Depends: ${shlibs:Depends}, ${misc:Depends}, libshogun17 (= ${binary:Version})
 Description: Large Scale Machine Learning Toolbox
  SHOGUN - is a new machine learning toolbox with focus on large scale kernel
  methods and especially on Support Vector Machines (SVM) with focus to
@@ -129,7 +129,7 @@ Replaces: shogun-dbg
 Section: debug
 Priority: extra
 Architecture: any
-Depends: ${misc:Depends}, libshogun16 (= ${binary:Version})
+Depends: ${misc:Depends}, libshogun17 (= ${binary:Version})
 Description: Large Scale Machine Learning Toolbox
  SHOGUN - is a new machine learning toolbox with focus on large scale kernel
  methods and especially on Support Vector Machines (SVM) with focus to
@@ -155,7 +155,7 @@ Package: shogun-cmdline-static
 Conflicts: shogun-cmdline
 Replaces: shogun-cmdline
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libshogun16 (= ${binary:Version})
+Depends: ${shlibs:Depends}, ${misc:Depends}, libshogun17 (= ${binary:Version})
 Description: Large Scale Machine Learning Toolbox
  SHOGUN - is a new machine learning toolbox with focus on large scale kernel
  methods and especially on Support Vector Machines (SVM) with focus to
