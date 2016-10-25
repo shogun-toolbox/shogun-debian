@@ -9,7 +9,7 @@ Build-Depends: libatlas-dev [!powerpc !alpha !arm !armel !armhf !sh4],
  libblas-dev, doxygen-latex, graphviz, libglpk-dev, libnlopt-dev, libbsd-dev,
  liblzo2-dev, zlib1g-dev, liblzma-dev, libxml2-dev, libjson-c-dev, cmake,
  libarpack2-dev, libsnappy-dev, libhdf5-dev (>= 1.8.8~) | libhdf5-serial-dev,
- libprotobuf-dev, protobuf-compiler, libcurl4-gnutls-dev, libbz2-dev, libcolpack-dev,
+ libprotobuf-dev, protobuf-compiler, libcurl4-gnutls-dev, libbz2-dev,
  clang [mips mipsel powerpc], python
 Standards-Version: 3.9.5
 Homepage: http://www.shogun-toolbox.org
