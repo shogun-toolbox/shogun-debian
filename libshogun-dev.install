@@ -1,2 +1,7 @@
 debian/tmp/usr/include/shogun
 debian/tmp/usr/lib/libshogun*.so
+debian/tmp/usr/lib/libshogun.a
+debian/tmp/usr/lib/cmake/shogun/ShogunConfig.cmake
+debian/tmp/usr/lib/cmake/shogun/ShogunConfigVersion.cmake
+debian/tmp/usr/lib/cmake/shogun/ShogunTargets.cmake
+debian/tmp/usr/lib/cmake/shogun/ShogunTargets-release.cmake
