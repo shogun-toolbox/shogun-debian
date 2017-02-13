@@ -33,7 +33,7 @@ CMAKE_FLAGS = \
 override_dh_auto_configure:
 	dh_auto_configure -- $(CMAKE_FLAGS) $(OVERRIDE_COMPILER)
 
-override_dh_build:
+override_dh_auto_build:
 	$(MAKE) -C $(BUILDDIR) meta_examples
 	dh_auto_build
 
