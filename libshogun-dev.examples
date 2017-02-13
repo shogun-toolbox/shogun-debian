@@ -1,1 +1,2 @@
-examples/documented/libshogun/*
+examples/undocumented/libshogun/*
+debian/tmp/usr/share/shogun/examples/cpp

@@ -23,7 +23,7 @@ CMAKE_FLAGS = \
 	-DLIBSHOGUN_BUILD_STATIC=ON \
 	-DBUILD_EXAMPLES=OFF \
 	-DUSE_SVMLIGHT=OFF \
-	-DBUILD_META_EXAMPLES=OFF \
+	-DBUILD_META_EXAMPLES=ON \
 	-DPythonModular=ON \
 	$(CMAKE_ARCH_FLAGS)
 
@@ -32,6 +32,10 @@ CMAKE_FLAGS = \
 
 override_dh_auto_configure:
 	dh_auto_configure -- $(CMAKE_FLAGS) $(OVERRIDE_COMPILER)
+
+override_dh_build:
+	$(MAKE) -C $(BUILDDIR) meta_examples
+	dh_auto_build
 
 override_dh_install:
 	dh_install
