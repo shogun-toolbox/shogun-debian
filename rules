@@ -43,7 +43,7 @@ override_dh_install:
 
 override_dh_installdocs:
 	$(MAKE) -C $(BUILDDIR) doxygen
-	dh_installdocs --link-doc=shogun-doc-en $(BUILDDIR)/doc/doxygen/html
+	dh_installdocs $(BUILDDIR)/doc/doxygen/html
 
 override_dh_fixperms-indep:
 	dh_fixperms
