@@ -4,9 +4,7 @@ Priority: optional
 Maintainer: Soeren Sonnenburg <sonne@debian.org>
 Build-Depends:
  cmake (>= 3.1.0),
- libatlas-dev [!powerpc !alpha !arm !armel !armhf !sh4],
- libatlas-base-dev [!powerpc !alpha !arm !armel !armhf !sh4] | liblapack-dev,
- libeigen3-dev,
+ liblapack-dev, libeigen3-dev,
  debhelper (>= 9),
  exuberant-ctags,
  libreadline-dev | libreadline5-dev,
