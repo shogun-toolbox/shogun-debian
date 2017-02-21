@@ -15,13 +15,13 @@ Build-Depends:
  libcurl4-gnutls-dev,
  clang [mips mipsel powerpc],
  python, python-numpy (>= 1:1.7.1-1~), python-all-dev (>= 2.7.0-1~), python-sphinx, python-ply,
- swig3.0 (>= 3.0.5) | swig2.0
+ swig3.0 (>= 3.0.5)
 Standards-Version: 3.9.5
 Homepage: http://www.shogun.ml
 Vcs-Git: https://github.com/shogun-toolbox/shogun-debian.git
 Vcs-Browser: https://github.com/shogun-toolbox/shogun-debian
 
-Package: libshogun17
+Package: libshogun18
 Conflicts: libshogunui6, libshogunui5, libshogunui4, libshogunui3,
  libshogunui2, libshogunui1, libshogunui0
 Architecture: any
@@ -52,7 +52,7 @@ Description: Large Scale Machine Learning Toolbox
 Package: libshogun-dev
 Section: libdevel
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libshogun17 (= ${binary:Version})
+Depends: ${shlibs:Depends}, ${misc:Depends}, libshogun18 (= ${binary:Version})
 Description: Large Scale Machine Learning Toolbox
  SHOGUN - is a new machine learning toolbox with focus on large scale kernel
  methods and especially on Support Vector Machines (SVM) with focus to
@@ -102,13 +102,13 @@ Description: Large Scale Machine Learning Toolbox
  interfaces to Matlab(tm), R, Octave, Readline and Python. This is the English
  user and developer documentation.
 
-Package: libshogun17-dbg
+Package: libshogun18-dbg
 Breaks: shogun-dbg
 Replaces: shogun-dbg
 Section: debug
 Priority: extra
 Architecture: any
-Depends: ${misc:Depends}, libshogun17 (= ${binary:Version})
+Depends: ${misc:Depends}, libshogun18 (= ${binary:Version})
 Description: Large Scale Machine Learning Toolbox
  SHOGUN - is a new machine learning toolbox with focus on large scale kernel
  methods and especially on Support Vector Machines (SVM) with focus to
@@ -132,7 +132,7 @@ Description: Large Scale Machine Learning Toolbox
 
 Package: python-shogun
 Architecture: any
-Depends: libshogun17 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}, python-numpy
+Depends: libshogun18 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}, python-numpy
 Recommends: python-matplotlib, python-scipy
 Provides: ${python:Provides}
 Description: Large Scale Machine Learning Toolbox
