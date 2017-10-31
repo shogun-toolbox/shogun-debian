@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Soeren Sonnenburg <sonne@debian.org>
 Build-Depends:
  cmake (>= 3.1.0),
- liblapack-dev, libeigen3-dev,
+ liblapack-dev, liblapacke, libeigen3-dev,
  debhelper (>= 9),
  exuberant-ctags,
  libreadline-dev | libreadline5-dev,
