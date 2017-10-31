@@ -56,7 +56,7 @@ do
   rm -rf ${_file}.orig
 done
 
-_file="src/interfaces/modular/Transfer_includes.i" &&				\
+_file="src/interfaces/swig/Transfer_includes.i" &&				\
 cp -a ${_file} ${_file}.orig &&							\
 echo '%}' >> ${_file} &&							\
 touch -r ${_file}.orig ${_file} &&						\
